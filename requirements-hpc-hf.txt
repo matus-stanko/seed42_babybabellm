@@ -1,0 +1,11 @@
+--extra-index-url https://download.pytorch.org/whl/cu124
+
+torch==2.6.0+cu124
+lm-eval==0.4.9
+transformers==4.56.2
+datasets==4.0.0
+huggingface-hub==0.36.2
+
+
+
+

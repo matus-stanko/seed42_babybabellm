@@ -1,0 +1,175 @@
+Using Conda environment: babybabellm-eval
+lm-eval import succeeded
+Evaluating local model for language: eng
+Model: /home/cotn/multilingual-evaluation/models/eng10-revc5a3-a100
+Results folder not found, starting evaluation...
+Passed argument batch_size = auto:10.0. Detecting largest batch size
+Determined largest batch size: 64
+Passed argument batch_size = auto:10.0. Detecting largest batch size
+Determined largest batch size: 64
+hf (pretrained=/home/cotn/multilingual-evaluation/models/eng10-revc5a3-a100), gen_kwargs: (None), limit: None, num_fewshot: 0, batch_size: auto:10 (64,64,64,64,64,64,64,64,64,64,64)
+|                            Tasks                            |Version|Filter|n-shot| Metric |   |Value |   |Stderr|
+|-------------------------------------------------------------|------:|------|-----:|--------|---|-----:|---|------|
+|babybabellm_eng                                              |      1|none  |      |acc     |↑  |0.6060|±  |0.0009|
+| - arc_easy_en_mubench                                       |      1|none  |     0|acc     |↑  |0.2938|±  |0.0094|
+|                                                             |       |none  |     0|acc_norm|↑  |0.2853|±  |0.0093|
+| - belebele_eng_Latn                                         |      0|none  |     0|acc     |↑  |0.2300|±  |0.0140|
+|                                                             |       |none  |     0|acc_norm|↑  |0.2300|±  |0.0140|
+| - blimp                                                     |      2|none  |      |acc     |↑  |0.6778|±  |0.0015|
+|  - blimp_adjunct_island                                     |      1|none  |     0|acc     |↑  |0.7360|±  |0.0139|
+|  - blimp_anaphor_gender_agreement                           |      1|none  |     0|acc     |↑  |0.8310|±  |0.0119|
+|  - blimp_anaphor_number_agreement                           |      1|none  |     0|acc     |↑  |0.9560|±  |0.0065|
+|  - blimp_animate_subject_passive                            |      1|none  |     0|acc     |↑  |0.6940|±  |0.0146|
+|  - blimp_animate_subject_trans                              |      1|none  |     0|acc     |↑  |0.8970|±  |0.0096|
+|  - blimp_causative                                          |      1|none  |     0|acc     |↑  |0.5850|±  |0.0156|
+|  - blimp_complex_NP_island                                  |      1|none  |     0|acc     |↑  |0.4970|±  |0.0158|
+|  - blimp_coordinate_structure_constraint_complex_left_branch|      1|none  |     0|acc     |↑  |0.2500|±  |0.0137|
+|  - blimp_coordinate_structure_constraint_object_extraction  |      1|none  |     0|acc     |↑  |0.5610|±  |0.0157|
+|  - blimp_determiner_noun_agreement_1                        |      1|none  |     0|acc     |↑  |0.9420|±  |0.0074|
+|  - blimp_determiner_noun_agreement_2                        |      1|none  |     0|acc     |↑  |0.9580|±  |0.0063|
+|  - blimp_determiner_noun_agreement_irregular_1              |      1|none  |     0|acc     |↑  |0.7730|±  |0.0133|
+|  - blimp_determiner_noun_agreement_irregular_2              |      1|none  |     0|acc     |↑  |0.8820|±  |0.0102|
+|  - blimp_determiner_noun_agreement_with_adj_2               |      1|none  |     0|acc     |↑  |0.8850|±  |0.0101|
+|  - blimp_determiner_noun_agreement_with_adj_irregular_1     |      1|none  |     0|acc     |↑  |0.7950|±  |0.0128|
+|  - blimp_determiner_noun_agreement_with_adj_irregular_2     |      1|none  |     0|acc     |↑  |0.8390|±  |0.0116|
+|  - blimp_determiner_noun_agreement_with_adjective_1         |      1|none  |     0|acc     |↑  |0.8960|±  |0.0097|
+|  - blimp_distractor_agreement_relational_noun               |      1|none  |     0|acc     |↑  |0.3500|±  |0.0151|
+|  - blimp_distractor_agreement_relative_clause               |      1|none  |     0|acc     |↑  |0.2930|±  |0.0144|
+|  - blimp_drop_argument                                      |      1|none  |     0|acc     |↑  |0.7420|±  |0.0138|
+|  - blimp_ellipsis_n_bar_1                                   |      1|none  |     0|acc     |↑  |0.5990|±  |0.0155|
+|  - blimp_ellipsis_n_bar_2                                   |      1|none  |     0|acc     |↑  |0.7890|±  |0.0129|
+|  - blimp_existential_there_object_raising                   |      1|none  |     0|acc     |↑  |0.7450|±  |0.0138|
+|  - blimp_existential_there_quantifiers_1                    |      1|none  |     0|acc     |↑  |0.9910|±  |0.0030|
+|  - blimp_existential_there_quantifiers_2                    |      1|none  |     0|acc     |↑  |0.5120|±  |0.0158|
+|  - blimp_existential_there_subject_raising                  |      1|none  |     0|acc     |↑  |0.7880|±  |0.0129|
+|  - blimp_expletive_it_object_raising                        |      1|none  |     0|acc     |↑  |0.6810|±  |0.0147|
+|  - blimp_inchoative                                         |      1|none  |     0|acc     |↑  |0.4940|±  |0.0158|
+|  - blimp_intransitive                                       |      1|none  |     0|acc     |↑  |0.6690|±  |0.0149|
+|  - blimp_irregular_past_participle_adjectives               |      1|none  |     0|acc     |↑  |0.9470|±  |0.0071|
+|  - blimp_irregular_past_participle_verbs                    |      1|none  |     0|acc     |↑  |0.8540|±  |0.0112|
+|  - blimp_irregular_plural_subject_verb_agreement_1          |      1|none  |     0|acc     |↑  |0.7610|±  |0.0135|
+|  - blimp_irregular_plural_subject_verb_agreement_2          |      1|none  |     0|acc     |↑  |0.8470|±  |0.0114|
+|  - blimp_left_branch_island_echo_question                   |      1|none  |     0|acc     |↑  |0.4780|±  |0.0158|
+|  - blimp_left_branch_island_simple_question                 |      1|none  |     0|acc     |↑  |0.2970|±  |0.0145|
+|  - blimp_matrix_question_npi_licensor_present               |      1|none  |     0|acc     |↑  |0.0540|±  |0.0072|
+|  - blimp_npi_present_1                                      |      1|none  |     0|acc     |↑  |0.2510|±  |0.0137|
+|  - blimp_npi_present_2                                      |      1|none  |     0|acc     |↑  |0.3290|±  |0.0149|
+|  - blimp_only_npi_licensor_present                          |      1|none  |     0|acc     |↑  |0.9440|±  |0.0073|
+|  - blimp_only_npi_scope                                     |      1|none  |     0|acc     |↑  |0.5680|±  |0.0157|
+|  - blimp_passive_1                                          |      1|none  |     0|acc     |↑  |0.8730|±  |0.0105|
+|  - blimp_passive_2                                          |      1|none  |     0|acc     |↑  |0.8470|±  |0.0114|
+|  - blimp_principle_A_c_command                              |      1|none  |     0|acc     |↑  |0.5440|±  |0.0158|
+|  - blimp_principle_A_case_1                                 |      1|none  |     0|acc     |↑  |1.0000|±  |     0|
+|  - blimp_principle_A_case_2                                 |      1|none  |     0|acc     |↑  |0.8830|±  |0.0102|
+|  - blimp_principle_A_domain_1                               |      1|none  |     0|acc     |↑  |0.9910|±  |0.0030|
+|  - blimp_principle_A_domain_2                               |      1|none  |     0|acc     |↑  |0.6580|±  |0.0150|
+|  - blimp_principle_A_domain_3                               |      1|none  |     0|acc     |↑  |0.5320|±  |0.0158|
+|  - blimp_principle_A_reconstruction                         |      1|none  |     0|acc     |↑  |0.3600|±  |0.0152|
+|  - blimp_regular_plural_subject_verb_agreement_1            |      1|none  |     0|acc     |↑  |0.8460|±  |0.0114|
+|  - blimp_regular_plural_subject_verb_agreement_2            |      1|none  |     0|acc     |↑  |0.8170|±  |0.0122|
+|  - blimp_sentential_negation_npi_licensor_present           |      1|none  |     0|acc     |↑  |1.0000|±  |     0|
+|  - blimp_sentential_negation_npi_scope                      |      1|none  |     0|acc     |↑  |0.2620|±  |0.0139|
+|  - blimp_sentential_subject_island                          |      1|none  |     0|acc     |↑  |0.2190|±  |0.0131|
+|  - blimp_superlative_quantifiers_1                          |      1|none  |     0|acc     |↑  |0.7420|±  |0.0138|
+|  - blimp_superlative_quantifiers_2                          |      1|none  |     0|acc     |↑  |0.7550|±  |0.0136|
+|  - blimp_tough_vs_raising_1                                 |      1|none  |     0|acc     |↑  |0.3300|±  |0.0149|
+|  - blimp_tough_vs_raising_2                                 |      1|none  |     0|acc     |↑  |0.7830|±  |0.0130|
+|  - blimp_transitive                                         |      1|none  |     0|acc     |↑  |0.7530|±  |0.0136|
+|  - blimp_wh_island                                          |      1|none  |     0|acc     |↑  |0.5290|±  |0.0158|
+|  - blimp_wh_questions_object_gap                            |      1|none  |     0|acc     |↑  |0.6520|±  |0.0151|
+|  - blimp_wh_questions_subject_gap                           |      1|none  |     0|acc     |↑  |0.8940|±  |0.0097|
+|  - blimp_wh_questions_subject_gap_long_distance             |      1|none  |     0|acc     |↑  |0.9600|±  |0.0062|
+|  - blimp_wh_vs_that_no_gap                                  |      1|none  |     0|acc     |↑  |0.9680|±  |0.0056|
+|  - blimp_wh_vs_that_no_gap_long_distance                    |      1|none  |     0|acc     |↑  |0.9720|±  |0.0052|
+|  - blimp_wh_vs_that_with_gap                                |      1|none  |     0|acc     |↑  |0.1810|±  |0.0122|
+|  - blimp_wh_vs_that_with_gap_long_distance                  |      1|none  |     0|acc     |↑  |0.1040|±  |0.0097|
+| - bmlama_en_mubench                                         |      1|none  |     0|acc     |↑  |0.3256|±  |0.0060|
+| - clams_en                                                  |      1|none  |     0|acc     |↑  |0.6687|±  |0.0012|
+| - copa                                                      |      1|none  |     0|acc     |↑  |0.6000|±  |0.0492|
+| - global_mmlu_full_en                                       |      0|none  |      |acc     |↑  |0.2298|±  |0.0035|
+|  - global_mmlu_full_en_humanities                           |      0|none  |      |acc     |↑  |0.2402|±  |0.0062|
+|   - global_mmlu_full_en_formal_logic                        |      0|none  |     0|acc     |↑  |0.2619|±  |0.0393|
+|   - global_mmlu_full_en_high_school_european_history        |      0|none  |     0|acc     |↑  |0.2424|±  |0.0335|
+|   - global_mmlu_full_en_high_school_us_history              |      0|none  |     0|acc     |↑  |0.2402|±  |0.0300|
+|   - global_mmlu_full_en_high_school_world_history           |      0|none  |     0|acc     |↑  |0.2700|±  |0.0289|
+|   - global_mmlu_full_en_international_law                   |      0|none  |     0|acc     |↑  |0.2314|±  |0.0385|
+|   - global_mmlu_full_en_jurisprudence                       |      0|none  |     0|acc     |↑  |0.2593|±  |0.0424|
+|   - global_mmlu_full_en_logical_fallacies                   |      0|none  |     0|acc     |↑  |0.2147|±  |0.0323|
+|   - global_mmlu_full_en_moral_disputes                      |      0|none  |     0|acc     |↑  |0.2428|±  |0.0231|
+|   - global_mmlu_full_en_moral_scenarios                     |      0|none  |     0|acc     |↑  |0.2380|±  |0.0142|
+|   - global_mmlu_full_en_philosophy                          |      0|none  |     0|acc     |↑  |0.1833|±  |0.0220|
+|   - global_mmlu_full_en_prehistory                          |      0|none  |     0|acc     |↑  |0.2222|±  |0.0231|
+|   - global_mmlu_full_en_professional_law                    |      0|none  |     0|acc     |↑  |0.2438|±  |0.0110|
+|   - global_mmlu_full_en_world_religions                     |      0|none  |     0|acc     |↑  |0.3099|±  |0.0355|
+|  - global_mmlu_full_en_other                                |      0|none  |      |acc     |↑  |0.2353|±  |0.0076|
+|   - global_mmlu_full_en_business_ethics                     |      0|none  |     0|acc     |↑  |0.2800|±  |0.0451|
+|   - global_mmlu_full_en_clinical_knowledge                  |      0|none  |     0|acc     |↑  |0.2075|±  |0.0250|
+|   - global_mmlu_full_en_college_medicine                    |      0|none  |     0|acc     |↑  |0.1965|±  |0.0303|
+|   - global_mmlu_full_en_global_facts                        |      0|none  |     0|acc     |↑  |0.1500|±  |0.0359|
+|   - global_mmlu_full_en_human_aging                         |      0|none  |     0|acc     |↑  |0.3049|±  |0.0309|
+|   - global_mmlu_full_en_management                          |      0|none  |     0|acc     |↑  |0.1748|±  |0.0376|
+|   - global_mmlu_full_en_marketing                           |      0|none  |     0|acc     |↑  |0.2863|±  |0.0296|
+|   - global_mmlu_full_en_medical_genetics                    |      0|none  |     0|acc     |↑  |0.3100|±  |0.0465|
+|   - global_mmlu_full_en_miscellaneous                       |      0|none  |     0|acc     |↑  |0.2324|±  |0.0151|
+|   - global_mmlu_full_en_nutrition                           |      0|none  |     0|acc     |↑  |0.2059|±  |0.0232|
+|   - global_mmlu_full_en_professional_accounting             |      0|none  |     0|acc     |↑  |0.2340|±  |0.0253|
+|   - global_mmlu_full_en_professional_medicine               |      0|none  |     0|acc     |↑  |0.2169|±  |0.0250|
+|   - global_mmlu_full_en_virology                            |      0|none  |     0|acc     |↑  |0.2711|±  |0.0346|
+|  - global_mmlu_full_en_social_sciences                      |      0|none  |      |acc     |↑  |0.2200|±  |0.0075|
+|   - global_mmlu_full_en_econometrics                        |      0|none  |     0|acc     |↑  |0.2193|±  |0.0389|
+|   - global_mmlu_full_en_high_school_geography               |      0|none  |     0|acc     |↑  |0.2071|±  |0.0289|
+|   - global_mmlu_full_en_high_school_government_and_politics |      0|none  |     0|acc     |↑  |0.2021|±  |0.0290|
+|   - global_mmlu_full_en_high_school_macroeconomics          |      0|none  |     0|acc     |↑  |0.2051|±  |0.0205|
+|   - global_mmlu_full_en_high_school_microeconomics          |      0|none  |     0|acc     |↑  |0.2101|±  |0.0265|
+|   - global_mmlu_full_en_high_school_psychology              |      0|none  |     0|acc     |↑  |0.2000|±  |0.0171|
+|   - global_mmlu_full_en_human_sexuality                     |      0|none  |     0|acc     |↑  |0.2595|±  |0.0384|
+|   - global_mmlu_full_en_professional_psychology             |      0|none  |     0|acc     |↑  |0.2435|±  |0.0174|
+|   - global_mmlu_full_en_public_relations                    |      0|none  |     0|acc     |↑  |0.2182|±  |0.0396|
+|   - global_mmlu_full_en_security_studies                    |      0|none  |     0|acc     |↑  |0.1918|±  |0.0252|
+|   - global_mmlu_full_en_sociology                           |      0|none  |     0|acc     |↑  |0.2438|±  |0.0304|
+|   - global_mmlu_full_en_us_foreign_policy                   |      0|none  |     0|acc     |↑  |0.3000|±  |0.0461|
+|  - global_mmlu_full_en_stem                                 |      0|none  |      |acc     |↑  |0.2185|±  |0.0073|
+|   - global_mmlu_full_en_abstract_algebra                    |      0|none  |     0|acc     |↑  |0.2300|±  |0.0423|
+|   - global_mmlu_full_en_anatomy                             |      0|none  |     0|acc     |↑  |0.2074|±  |0.0350|
+|   - global_mmlu_full_en_astronomy                           |      0|none  |     0|acc     |↑  |0.1908|±  |0.0320|
+|   - global_mmlu_full_en_college_biology                     |      0|none  |     0|acc     |↑  |0.2778|±  |0.0375|
+|   - global_mmlu_full_en_college_chemistry                   |      0|none  |     0|acc     |↑  |0.2000|±  |0.0402|
+|   - global_mmlu_full_en_college_computer_science            |      0|none  |     0|acc     |↑  |0.2600|±  |0.0441|
+|   - global_mmlu_full_en_college_mathematics                 |      0|none  |     0|acc     |↑  |0.2200|±  |0.0416|
+|   - global_mmlu_full_en_college_physics                     |      0|none  |     0|acc     |↑  |0.2157|±  |0.0409|
+|   - global_mmlu_full_en_computer_security                   |      0|none  |     0|acc     |↑  |0.2700|±  |0.0446|
+|   - global_mmlu_full_en_conceptual_physics                  |      0|none  |     0|acc     |↑  |0.2638|±  |0.0288|
+|   - global_mmlu_full_en_electrical_engineering              |      0|none  |     0|acc     |↑  |0.2621|±  |0.0366|
+|   - global_mmlu_full_en_elementary_mathematics              |      0|none  |     0|acc     |↑  |0.2143|±  |0.0211|
+|   - global_mmlu_full_en_high_school_biology                 |      0|none  |     0|acc     |↑  |0.1806|±  |0.0219|
+|   - global_mmlu_full_en_high_school_chemistry               |      0|none  |     0|acc     |↑  |0.1675|±  |0.0263|
+|   - global_mmlu_full_en_high_school_computer_science        |      0|none  |     0|acc     |↑  |0.2300|±  |0.0423|
+|   - global_mmlu_full_en_high_school_mathematics             |      0|none  |     0|acc     |↑  |0.2148|±  |0.0250|
+|   - global_mmlu_full_en_high_school_physics                 |      0|none  |     0|acc     |↑  |0.1854|±  |0.0317|
+|   - global_mmlu_full_en_high_school_statistics              |      0|none  |     0|acc     |↑  |0.1620|±  |0.0251|
+|   - global_mmlu_full_en_machine_learning                    |      0|none  |     0|acc     |↑  |0.3304|±  |0.0446|
+| - hellaswag_en_mubench                                      |      1|none  |     0|acc     |↑  |0.2675|±  |0.0047|
+|                                                             |       |none  |     0|acc_norm|↑  |0.2519|±  |0.0046|
+| - multiblimp_eng                                            |      1|none  |     0|acc     |↑  |0.8364|±  |0.0133|
+| - multinli_en_mubench                                       |      1|none  |     0|acc     |↑  |0.3366|±  |0.0050|
+| - sib200_eng_Latn                                           |      1|none  |     0|acc     |↑  |0.1078|±  |0.0218|
+| - truthfulqa_en_mubench                                     |      1|none  |     0|acc     |↑  |0.2296|±  |0.0174|
+|                                                             |       |none  |     0|acc_norm|↑  |0.2806|±  |0.0185|
+| - uhura-arc-easy_en_prompt_1                                |      1|none  |     0|acc     |↑  |0.2654|±  |0.0194|
+|                                                             |       |none  |     0|f1      |↑  |0.1306|±  |   N/A|
+| - winogrande_en_mubench                                     |      1|none  |     0|acc     |↑  |0.5087|±  |0.0144|
+| - xnli_en                                                   |      1|none  |     0|acc     |↑  |0.3586|±  |0.0096|
+| - xstorycloze_en_mubench                                    |      1|none  |     0|acc     |↑  |0.5015|±  |0.0139|
+|                                                             |       |none  |     0|acc_norm|↑  |0.5379|±  |0.0139|
+
+|                Groups                 |Version|Filter|n-shot|Metric|   |Value |   |Stderr|
+|---------------------------------------|------:|------|------|------|---|-----:|---|-----:|
+|babybabellm_eng                        |      1|none  |      |acc   |↑  |0.6060|±  |0.0009|
+| - blimp                               |      2|none  |      |acc   |↑  |0.6778|±  |0.0015|
+| - global_mmlu_full_en                 |      0|none  |      |acc   |↑  |0.2298|±  |0.0035|
+|  - global_mmlu_full_en_humanities     |      0|none  |      |acc   |↑  |0.2402|±  |0.0062|
+|  - global_mmlu_full_en_other          |      0|none  |      |acc   |↑  |0.2353|±  |0.0076|
+|  - global_mmlu_full_en_social_sciences|      0|none  |      |acc   |↑  |0.2200|±  |0.0075|
+|  - global_mmlu_full_en_stem           |      0|none  |      |acc   |↑  |0.2185|±  |0.0073|
+
+Completed evaluation for eng
