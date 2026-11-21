@@ -1,0 +1,1314 @@
+python: /home/pier/.conda/envs/babylm-train/bin/python
+cn13.hpc.itu.dk
+Fri Oct 23 12:51:34 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          On  |   00000000:E1:00.0 Off |                    0 |
+| N/A   22C    P0             32W /  250W |       1MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+2.7.1+cu126 4.53.0 NVIDIA A100-PCIE-40GB True
+Using the latest cached version of the dataset since BabyLM-community/babylm-dan couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /home/pier/.cache/huggingface/datasets/BabyLM-community___babylm-dan/default/0.0.0/65e6a34f7ad8838b3ea969d66e00d9a6a8b9e740 (last modified on Fri Oct 23 08:55:13 2026).
+
+
+
+📥 Loading dataset...
+🔡 Training BPE tokenizer...
+🧹 Tokenizing dataset...
+Map:   0%|          | 0/830 [00:00<?, ? examples/s]Map: 100%|██████████| 830/830 [00:03<00:00, 210.44 examples/s]Map: 100%|██████████| 830/830 [00:04<00:00, 195.49 examples/s]
+/home/pier/multilingual-training/train.py:135: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+[RANK 0] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+🔧 Loading model config and initializing model...
+Namespace(dataset='BabyLM-community/babylm-dan', config='./small_config.json', output_dir='./dan-baseline-small', model_name='my-dan-baseline-small', vocab_size=8192, epochs=10, batch_size=8, max_length=512, learning_rate=0.0001, push_to_hub=False, seed=42)
+🚀 Starting training...
+  0%|          | 0/4530 [00:00<?, ?it/s]`loss_type=None` was set in the config but it is unrecognised.Using the default loss: `ForCausalLMLoss`.
+  0%|          | 1/4530 [00:03<3:54:00,  3.10s/it]  0%|          | 2/4530 [00:03<1:47:54,  1.43s/it]  0%|          | 8/4530 [00:03<18:59,  3.97it/s]    0%|          | 14/4530 [00:03<09:25,  7.99it/s]  0%|          | 21/4530 [00:03<05:30, 13.65it/s]  1%|          | 29/4530 [00:03<03:33, 21.10it/s]  1%|          | 36/4530 [00:03<02:40, 27.99it/s]  1%|          | 44/4530 [00:04<02:04, 35.93it/s]  1%|          | 51/4530 [00:04<01:46, 42.21it/s]  1%|▏         | 58/4530 [00:04<01:32, 48.11it/s]  1%|▏         | 66/4530 [00:04<01:22, 53.99it/s]  2%|▏         | 73/4530 [00:04<01:17, 57.70it/s]  2%|▏         | 80/4530 [00:04<01:13, 60.82it/s]  2%|▏         | 87/4530 [00:04<01:10, 63.23it/s]  2%|▏         | 94/4530 [00:04<01:08, 65.10it/s]  2%|▏         | 102/4530 [00:04<01:06, 66.70it/s]  2%|▏         | 110/4530 [00:04<01:05, 67.85it/s]  3%|▎         | 117/4530 [00:05<01:04, 68.27it/s]  3%|▎         | 124/4530 [00:05<01:04, 68.73it/s]  3%|▎         | 132/4530 [00:05<01:03, 69.21it/s]  3%|▎         | 139/4530 [00:05<01:03, 69.03it/s]  3%|▎         | 146/4530 [00:05<01:03, 69.10it/s]  3%|▎         | 153/4530 [00:05<01:03, 69.27it/s]  4%|▎         | 161/4530 [00:05<01:02, 70.18it/s]  4%|▎         | 169/4530 [00:05<01:02, 70.09it/s]  4%|▍         | 177/4530 [00:05<01:02, 69.73it/s]  4%|▍         | 184/4530 [00:06<01:02, 69.76it/s]  4%|▍         | 191/4530 [00:06<01:02, 69.79it/s]  4%|▍         | 198/4530 [00:06<01:02, 69.67it/s]  5%|▍         | 205/4530 [00:06<01:02, 68.87it/s]  5%|▍         | 212/4530 [00:06<01:02, 69.20it/s]  5%|▍         | 220/4530 [00:06<01:01, 69.55it/s]  5%|▌         | 227/4530 [00:06<01:01, 69.65it/s]  5%|▌         | 234/4530 [00:06<01:01, 69.66it/s]  5%|▌         | 242/4530 [00:06<01:01, 69.82it/s]  5%|▌         | 249/4530 [00:06<01:01, 69.59it/s]  6%|▌         | 257/4530 [00:07<01:01, 69.87it/s]  6%|▌         | 264/4530 [00:07<01:01, 69.78it/s]  6%|▌         | 271/4530 [00:07<01:01, 69.77it/s]  6%|▌         | 278/4530 [00:07<01:00, 69.79it/s]  6%|▋         | 285/4530 [00:07<01:00, 69.74it/s]  6%|▋         | 292/4530 [00:07<01:17, 54.88it/s]  7%|▋         | 300/4530 [00:07<01:11, 59.03it/s]  7%|▋         | 308/4530 [00:07<01:07, 62.38it/s]  7%|▋         | 316/4530 [00:08<01:05, 64.69it/s]  7%|▋         | 324/4530 [00:08<01:03, 66.54it/s]  7%|▋         | 331/4530 [00:08<01:02, 67.33it/s]  7%|▋         | 339/4530 [00:08<01:01, 68.40it/s]  8%|▊         | 346/4530 [00:08<01:00, 68.66it/s]  8%|▊         | 354/4530 [00:08<01:00, 69.10it/s]  8%|▊         | 362/4530 [00:08<00:59, 69.77it/s]  8%|▊         | 370/4530 [00:08<00:59, 69.81it/s]  8%|▊         | 378/4530 [00:08<00:58, 70.45it/s]  9%|▊         | 386/4530 [00:09<00:58, 70.89it/s]  9%|▊         | 394/4530 [00:09<00:58, 70.92it/s]  9%|▉         | 402/4530 [00:09<00:58, 70.61it/s]  9%|▉         | 410/4530 [00:09<00:59, 69.80it/s]  9%|▉         | 418/4530 [00:09<00:58, 70.11it/s]  9%|▉         | 426/4530 [00:09<00:58, 70.26it/s] 10%|▉         | 434/4530 [00:09<00:58, 70.37it/s] 10%|▉         | 442/4530 [00:09<00:58, 70.48it/s] 10%|▉         | 450/4530 [00:09<00:57, 71.35it/s]Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs000000960400802300074b44'
+OSError: [Errno 16] Device or resource busy: '.nfs000000950a4c500000074b43'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 16] Device or resource busy: '.nfs000000958f4f003e00074b46'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000009680eef02300074b45'
+                                                   10%|█         | 453/4530 [00:10<00:57, 71.35it/s]{'loss': 4.5781, 'grad_norm': 1.3303983211517334, 'learning_rate': 9.002207505518764e-05, 'epoch': 1.0}
+
+  0%|          | 0/24 [00:00<?, ?it/s][A
+ 88%|████████▊ | 21/24 [00:00<00:00, 205.11it/s][ATraceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 16] Device or resource busy: '.nfs0000009e882df46400074b48'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000009e0877d80500074b47'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000009f0167403100074b4a'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000009f831e902900074b49'
+                                                  
+                                                [A 10%|█         | 453/4530 [00:10<00:57, 71.35it/s]
+100%|██████████| 24/24 [00:00<00:00, 205.11it/s][A
+                                                [A{'eval_loss': 4.0490403175354, 'eval_runtime': 0.7507, 'eval_samples_per_second': 254.428, 'eval_steps_per_second': 31.97, 'epoch': 1.0}
+ 10%|█         | 458/4530 [00:11<04:19, 15.71it/s] 10%|█         | 466/4530 [00:11<03:18, 20.48it/s] 10%|█         | 474/4530 [00:11<02:35, 26.08it/s] 11%|█         | 482/4530 [00:11<02:05, 32.19it/s] 11%|█         | 489/4530 [00:11<01:47, 37.73it/s] 11%|█         | 496/4530 [00:11<01:33, 43.33it/s] 11%|█         | 504/4530 [00:11<01:21, 49.40it/s] 11%|█▏        | 511/4530 [00:12<01:14, 53.81it/s] 11%|█▏        | 518/4530 [00:12<01:09, 57.59it/s] 12%|█▏        | 526/4530 [00:12<01:05, 61.15it/s] 12%|█▏        | 534/4530 [00:12<01:02, 63.73it/s] 12%|█▏        | 542/4530 [00:12<01:00, 65.77it/s] 12%|█▏        | 550/4530 [00:12<00:59, 67.13it/s] 12%|█▏        | 558/4530 [00:12<01:05, 60.62it/s] 12%|█▏        | 566/4530 [00:12<01:02, 63.28it/s] 13%|█▎        | 574/4530 [00:13<01:00, 65.59it/s] 13%|█▎        | 582/4530 [00:13<00:58, 66.98it/s] 13%|█▎        | 590/4530 [00:13<00:57, 68.56it/s] 13%|█▎        | 598/4530 [00:13<00:56, 69.16it/s] 13%|█▎        | 606/4530 [00:13<00:56, 69.95it/s] 14%|█▎        | 614/4530 [00:13<00:55, 70.54it/s] 14%|█▎        | 622/4530 [00:13<00:55, 70.84it/s] 14%|█▍        | 630/4530 [00:13<00:54, 71.12it/s] 14%|█▍        | 638/4530 [00:13<00:54, 71.46it/s] 14%|█▍        | 646/4530 [00:14<00:54, 71.86it/s] 14%|█▍        | 654/4530 [00:14<00:53, 72.11it/s] 15%|█▍        | 662/4530 [00:14<00:53, 71.67it/s] 15%|█▍        | 670/4530 [00:14<00:54, 71.23it/s] 15%|█▍        | 678/4530 [00:14<00:53, 71.64it/s] 15%|█▌        | 686/4530 [00:14<00:53, 72.03it/s] 15%|█▌        | 694/4530 [00:14<00:52, 72.75it/s] 15%|█▌        | 702/4530 [00:14<00:52, 72.91it/s] 16%|█▌        | 710/4530 [00:14<00:52, 73.16it/s] 16%|█▌        | 718/4530 [00:15<00:52, 72.95it/s] 16%|█▌        | 726/4530 [00:15<00:52, 72.95it/s] 16%|█▌        | 734/4530 [00:15<00:52, 72.31it/s] 16%|█▋        | 742/4530 [00:15<00:51, 72.87it/s] 17%|█▋        | 750/4530 [00:15<00:51, 72.96it/s] 17%|█▋        | 758/4530 [00:15<00:51, 73.15it/s] 17%|█▋        | 766/4530 [00:15<00:51, 73.14it/s] 17%|█▋        | 774/4530 [00:15<00:51, 72.88it/s] 17%|█▋        | 782/4530 [00:15<00:51, 72.71it/s] 17%|█▋        | 790/4530 [00:16<00:51, 73.07it/s] 18%|█▊        | 798/4530 [00:16<00:50, 73.39it/s] 18%|█▊        | 806/4530 [00:16<00:50, 73.70it/s] 18%|█▊        | 814/4530 [00:16<00:50, 73.52it/s] 18%|█▊        | 822/4530 [00:16<00:50, 73.12it/s] 18%|█▊        | 830/4530 [00:16<00:50, 73.41it/s] 18%|█▊        | 838/4530 [00:16<00:50, 73.16it/s] 19%|█▊        | 846/4530 [00:16<00:50, 73.01it/s] 19%|█▉        | 854/4530 [00:16<00:50, 72.67it/s] 19%|█▉        | 862/4530 [00:17<00:50, 72.74it/s] 19%|█▉        | 870/4530 [00:17<00:50, 72.62it/s] 19%|█▉        | 878/4530 [00:17<00:50, 72.37it/s] 20%|█▉        | 886/4530 [00:17<00:50, 72.16it/s] 20%|█▉        | 894/4530 [00:17<00:50, 72.21it/s] 20%|█▉        | 902/4530 [00:17<00:49, 72.63it/s]Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs000000a0073fbc2300074b4d'
+OSError: [Errno 16] Device or resource busy: '.nfs00000000077ee80300074b4e'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs000000008aba43dd00074b4b'
+OSError: [Errno 16] Device or resource busy: '.nfs0000000107221c2800074b4c'
+                                                   20%|██        | 906/4530 [00:17<00:49, 72.63it/s]{'loss': 4.0328, 'grad_norm': 2.4017884731292725, 'learning_rate': 8.002207505518764e-05, 'epoch': 2.0}
+
+  0%|          | 0/24 [00:00<?, ?it/s][A
+ 62%|██████▎   | 15/24 [00:00<00:00, 145.82it/s][ATraceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs000000080d43f80800074b50'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000000704ef8c1500074b52'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs00000006870cb40600074b51'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs00000007822ecc3600074b4f'
+                                                  
+                                                [A 20%|██        | 906/4530 [00:18<00:49, 72.63it/s]
+100%|██████████| 24/24 [00:00<00:00, 145.82it/s][A
+                                                [A{'eval_loss': 3.853543758392334, 'eval_runtime': 0.8261, 'eval_samples_per_second': 231.213, 'eval_steps_per_second': 29.053, 'epoch': 2.0}
+ 20%|██        | 910/4530 [00:19<04:14, 14.22it/s] 20%|██        | 918/4530 [00:19<03:12, 18.72it/s] 20%|██        | 926/4530 [00:19<02:30, 24.03it/s] 21%|██        | 934/4530 [00:19<01:59, 30.13it/s] 21%|██        | 942/4530 [00:19<01:38, 36.45it/s] 21%|██        | 950/4530 [00:19<01:23, 42.85it/s] 21%|██        | 957/4530 [00:19<01:14, 47.92it/s] 21%|██▏       | 965/4530 [00:19<01:07, 53.12it/s] 21%|██▏       | 972/4530 [00:20<01:02, 56.83it/s] 22%|██▏       | 979/4530 [00:20<00:59, 59.95it/s] 22%|██▏       | 987/4530 [00:20<00:56, 62.98it/s] 22%|██▏       | 994/4530 [00:20<00:54, 64.55it/s] 22%|██▏       | 1001/4530 [00:20<00:53, 66.03it/s] 22%|██▏       | 1009/4530 [00:20<00:52, 67.32it/s] 22%|██▏       | 1017/4530 [00:20<00:51, 68.31it/s] 23%|██▎       | 1025/4530 [00:20<00:50, 68.75it/s] 23%|██▎       | 1033/4530 [00:20<00:50, 69.22it/s] 23%|██▎       | 1041/4530 [00:21<00:50, 69.45it/s] 23%|██▎       | 1049/4530 [00:21<00:49, 69.73it/s] 23%|██▎       | 1057/4530 [00:21<00:49, 70.58it/s] 24%|██▎       | 1065/4530 [00:21<00:48, 71.13it/s] 24%|██▎       | 1073/4530 [00:21<00:48, 71.46it/s] 24%|██▍       | 1081/4530 [00:21<00:48, 71.38it/s] 24%|██▍       | 1089/4530 [00:21<00:48, 71.45it/s] 24%|██▍       | 1097/4530 [00:21<00:48, 71.45it/s] 24%|██▍       | 1105/4530 [00:21<00:47, 71.84it/s] 25%|██▍       | 1113/4530 [00:22<00:47, 71.27it/s] 25%|██▍       | 1121/4530 [00:22<00:48, 71.02it/s] 25%|██▍       | 1129/4530 [00:22<00:48, 70.84it/s] 25%|██▌       | 1137/4530 [00:22<00:48, 70.53it/s] 25%|██▌       | 1145/4530 [00:22<00:47, 70.56it/s] 25%|██▌       | 1153/4530 [00:22<00:47, 70.44it/s] 26%|██▌       | 1161/4530 [00:22<00:47, 70.55it/s] 26%|██▌       | 1169/4530 [00:22<00:47, 70.13it/s] 26%|██▌       | 1177/4530 [00:22<00:50, 66.99it/s] 26%|██▌       | 1185/4530 [00:23<00:48, 68.37it/s] 26%|██▋       | 1193/4530 [00:23<00:48, 69.23it/s] 27%|██▋       | 1201/4530 [00:23<00:47, 70.15it/s] 27%|██▋       | 1209/4530 [00:23<00:47, 70.47it/s] 27%|██▋       | 1217/4530 [00:23<00:46, 70.79it/s] 27%|██▋       | 1225/4530 [00:23<00:46, 71.02it/s] 27%|██▋       | 1233/4530 [00:23<00:46, 71.12it/s] 27%|██▋       | 1241/4530 [00:23<00:46, 70.96it/s] 28%|██▊       | 1249/4530 [00:23<00:46, 70.42it/s] 28%|██▊       | 1257/4530 [00:24<00:46, 69.79it/s] 28%|██▊       | 1265/4530 [00:24<00:46, 69.93it/s] 28%|██▊       | 1273/4530 [00:24<00:46, 70.16it/s] 28%|██▊       | 1281/4530 [00:24<00:46, 70.57it/s] 28%|██▊       | 1289/4530 [00:24<00:45, 70.82it/s] 29%|██▊       | 1297/4530 [00:24<00:45, 71.61it/s] 29%|██▉       | 1305/4530 [00:24<00:45, 71.54it/s] 29%|██▉       | 1313/4530 [00:24<00:45, 71.44it/s] 29%|██▉       | 1321/4530 [00:24<00:44, 71.56it/s] 29%|██▉       | 1329/4530 [00:25<00:44, 71.64it/s] 30%|██▉       | 1337/4530 [00:25<00:44, 71.41it/s] 30%|██▉       | 1345/4530 [00:25<00:44, 71.46it/s] 30%|██▉       | 1353/4530 [00:25<00:44, 71.91it/s]Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000000a0c1f645e00074b55'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs00000008873a443200074b56'
+OSError: [Errno 16] Device or resource busy: '.nfs000000098951340700074b53'
+OSError: [Errno 16] Device or resource busy: '.nfs0000000903a6c01f00074b54'
+                                                    30%|███       | 1359/4530 [00:25<00:44, 71.91it/s]{'loss': 3.8538, 'grad_norm': 1.2064015865325928, 'learning_rate': 7.002207505518764e-05, 'epoch': 3.0}
+
+  0%|          | 0/24 [00:00<?, ?it/s][A
+ 12%|█▎        | 3/24 [00:00<00:00, 28.19it/s][ATraceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs00000010088fec2f00074b58'
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000000f8228680f00074b57'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000000f0565c02500074b5a'
+OSError: [Errno 16] Device or resource busy: '.nfs0000000e8b76ec3d00074b59'
+
+100%|██████████| 24/24 [00:00<00:00, 71.65it/s][A                                                   
+                                               [A 30%|███       | 1359/4530 [00:26<00:44, 71.91it/s]
+100%|██████████| 24/24 [00:00<00:00, 71.65it/s][A
+                                               [A{'eval_loss': 3.734436273574829, 'eval_runtime': 0.6724, 'eval_samples_per_second': 284.065, 'eval_steps_per_second': 35.694, 'epoch': 3.0}
+ 30%|███       | 1361/4530 [00:26<03:12, 16.50it/s] 30%|███       | 1367/4530 [00:26<02:42, 19.45it/s] 30%|███       | 1375/4530 [00:27<02:04, 25.26it/s] 31%|███       | 1383/4530 [00:27<01:39, 31.60it/s] 31%|███       | 1391/4530 [00:27<01:22, 38.08it/s] 31%|███       | 1399/4530 [00:27<01:10, 44.26it/s] 31%|███       | 1407/4530 [00:27<01:02, 50.01it/s] 31%|███       | 1415/4530 [00:27<00:56, 54.88it/s] 31%|███▏      | 1423/4530 [00:27<00:52, 58.71it/s] 32%|███▏      | 1431/4530 [00:27<00:49, 62.00it/s] 32%|███▏      | 1439/4530 [00:27<00:47, 64.63it/s] 32%|███▏      | 1447/4530 [00:28<01:41, 30.51it/s] 32%|███▏      | 1455/4530 [00:28<01:23, 36.86it/s] 32%|███▏      | 1463/4530 [00:28<01:10, 43.21it/s] 32%|███▏      | 1471/4530 [00:28<01:02, 48.90it/s] 33%|███▎      | 1479/4530 [00:28<00:56, 53.97it/s] 33%|███▎      | 1487/4530 [00:29<00:52, 58.37it/s] 33%|███▎      | 1495/4530 [00:29<00:49, 61.70it/s] 33%|███▎      | 1503/4530 [00:29<00:46, 64.51it/s] 33%|███▎      | 1511/4530 [00:29<00:45, 66.45it/s] 34%|███▎      | 1519/4530 [00:29<00:44, 68.05it/s] 34%|███▎      | 1527/4530 [00:29<00:43, 69.45it/s] 34%|███▍      | 1535/4530 [00:29<00:42, 70.59it/s] 34%|███▍      | 1543/4530 [00:29<00:42, 70.43it/s] 34%|███▍      | 1551/4530 [00:29<00:42, 70.38it/s] 34%|███▍      | 1559/4530 [00:30<00:42, 70.60it/s] 35%|███▍      | 1567/4530 [00:30<00:42, 70.52it/s] 35%|███▍      | 1575/4530 [00:30<00:41, 70.91it/s] 35%|███▍      | 1583/4530 [00:30<00:41, 70.75it/s] 35%|███▌      | 1591/4530 [00:30<00:41, 71.10it/s] 35%|███▌      | 1599/4530 [00:30<00:41, 70.83it/s] 35%|███▌      | 1607/4530 [00:30<00:41, 71.06it/s] 36%|███▌      | 1615/4530 [00:30<00:41, 71.04it/s] 36%|███▌      | 1623/4530 [00:30<00:40, 71.00it/s] 36%|███▌      | 1631/4530 [00:31<00:40, 71.76it/s] 36%|███▌      | 1639/4530 [00:31<00:40, 71.39it/s] 36%|███▋      | 1647/4530 [00:31<00:40, 71.64it/s] 37%|███▋      | 1655/4530 [00:31<00:40, 71.49it/s] 37%|███▋      | 1663/4530 [00:31<00:40, 71.56it/s] 37%|███▋      | 1671/4530 [00:31<00:40, 71.34it/s] 37%|███▋      | 1679/4530 [00:31<00:39, 71.96it/s] 37%|███▋      | 1687/4530 [00:31<00:39, 71.53it/s] 37%|███▋      | 1695/4530 [00:31<00:39, 71.54it/s] 38%|███▊      | 1703/4530 [00:32<00:39, 71.61it/s] 38%|███▊      | 1711/4530 [00:32<00:39, 71.29it/s] 38%|███▊      | 1719/4530 [00:32<00:39, 71.26it/s] 38%|███▊      | 1727/4530 [00:32<00:39, 70.90it/s] 38%|███▊      | 1735/4530 [00:32<00:39, 70.87it/s] 38%|███▊      | 1743/4530 [00:32<00:39, 71.10it/s] 39%|███▊      | 1751/4530 [00:32<00:39, 71.19it/s] 39%|███▉      | 1759/4530 [00:32<00:38, 71.48it/s] 39%|███▉      | 1767/4530 [00:33<00:38, 71.21it/s] 39%|███▉      | 1775/4530 [00:33<00:38, 71.56it/s] 39%|███▉      | 1783/4530 [00:33<00:38, 71.45it/s] 40%|███▉      | 1791/4530 [00:33<00:38, 71.65it/s] 40%|███▉      | 1799/4530 [00:33<00:38, 71.29it/s] 40%|███▉      | 1807/4530 [00:33<00:37, 72.13it/s]Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs000000111b18243d00074b5d'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs000000120630ac0400074b5e'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs00000011825cd42e00074b5b'
+OSError: [Errno 16] Device or resource busy: '.nfs00000010811d640800074b5c'
+                                                    40%|████      | 1812/4530 [00:33<00:37, 72.13it/s]{'loss': 3.7318, 'grad_norm': 1.6546188592910767, 'learning_rate': 6.0022075055187646e-05, 'epoch': 4.0}
+
+  0%|          | 0/24 [00:00<?, ?it/s][A
+ 67%|██████▋   | 16/24 [00:00<00:00, 159.16it/s][ATraceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs000000168849d80800074b60'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs000000160b46500f00074b62'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000001704003c3000074b5f'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000001788b6142e00074b61'
+                                                   
+                                                [A 40%|████      | 1812/4530 [00:34<00:37, 72.13it/s]
+100%|██████████| 24/24 [00:00<00:00, 159.16it/s][A
+                                                [A{'eval_loss': 3.6480400562286377, 'eval_runtime': 0.6356, 'eval_samples_per_second': 300.521, 'eval_steps_per_second': 37.762, 'epoch': 4.0}
+ 40%|████      | 1815/4530 [00:34<02:26, 18.49it/s] 40%|████      | 1823/4530 [00:34<01:53, 23.76it/s] 40%|████      | 1831/4530 [00:34<01:30, 29.67it/s] 41%|████      | 1838/4530 [00:35<01:16, 35.15it/s] 41%|████      | 1846/4530 [00:35<01:04, 41.56it/s] 41%|████      | 1854/4530 [00:35<00:56, 47.61it/s] 41%|████      | 1862/4530 [00:35<00:50, 53.24it/s] 41%|████▏     | 1870/4530 [00:35<00:46, 57.49it/s] 41%|████▏     | 1878/4530 [00:35<00:43, 60.87it/s] 42%|████▏     | 1886/4530 [00:35<00:41, 63.61it/s] 42%|████▏     | 1894/4530 [00:35<00:40, 65.82it/s] 42%|████▏     | 1902/4530 [00:35<00:39, 67.14it/s] 42%|████▏     | 1910/4530 [00:36<00:38, 68.51it/s] 42%|████▏     | 1918/4530 [00:36<00:38, 68.30it/s] 43%|████▎     | 1926/4530 [00:36<00:37, 68.83it/s] 43%|████▎     | 1934/4530 [00:36<00:37, 69.01it/s] 43%|████▎     | 1942/4530 [00:36<00:37, 69.40it/s] 43%|████▎     | 1950/4530 [00:36<00:37, 69.51it/s] 43%|████▎     | 1957/4530 [00:36<00:37, 69.53it/s] 43%|████▎     | 1965/4530 [00:36<00:36, 70.57it/s] 44%|████▎     | 1973/4530 [00:36<00:36, 70.51it/s] 44%|████▎     | 1981/4530 [00:37<00:36, 70.62it/s] 44%|████▍     | 1989/4530 [00:37<00:35, 70.63it/s] 44%|████▍     | 1997/4530 [00:37<00:35, 70.48it/s] 44%|████▍     | 2005/4530 [00:37<00:35, 70.45it/s] 44%|████▍     | 2013/4530 [00:37<00:35, 70.78it/s] 45%|████▍     | 2021/4530 [00:37<00:35, 70.78it/s] 45%|████▍     | 2029/4530 [00:37<00:35, 70.66it/s] 45%|████▍     | 2037/4530 [00:37<00:35, 70.55it/s] 45%|████▌     | 2045/4530 [00:38<00:35, 70.65it/s] 45%|████▌     | 2053/4530 [00:38<00:35, 70.31it/s] 45%|████▌     | 2061/4530 [00:38<00:35, 70.40it/s] 46%|████▌     | 2069/4530 [00:38<00:34, 70.43it/s] 46%|████▌     | 2077/4530 [00:38<00:34, 70.14it/s] 46%|████▌     | 2085/4530 [00:38<00:34, 70.26it/s] 46%|████▌     | 2093/4530 [00:38<00:34, 70.51it/s] 46%|████▋     | 2101/4530 [00:38<00:34, 70.33it/s] 47%|████▋     | 2109/4530 [00:38<00:34, 70.23it/s] 47%|████▋     | 2117/4530 [00:39<00:34, 70.24it/s] 47%|████▋     | 2125/4530 [00:39<00:34, 70.48it/s] 47%|████▋     | 2133/4530 [00:39<00:33, 70.82it/s] 47%|████▋     | 2141/4530 [00:39<00:33, 70.72it/s] 47%|████▋     | 2149/4530 [00:39<00:33, 70.62it/s] 48%|████▊     | 2157/4530 [00:39<00:33, 71.07it/s] 48%|████▊     | 2165/4530 [00:39<00:33, 71.15it/s] 48%|████▊     | 2173/4530 [00:39<00:33, 70.88it/s] 48%|████▊     | 2181/4530 [00:39<00:33, 70.99it/s] 48%|████▊     | 2189/4530 [00:40<00:32, 71.04it/s] 48%|████▊     | 2197/4530 [00:40<00:32, 71.26it/s] 49%|████▊     | 2205/4530 [00:40<00:32, 71.43it/s] 49%|████▉     | 2213/4530 [00:40<00:32, 71.20it/s] 49%|████▉     | 2221/4530 [00:40<00:32, 71.29it/s] 49%|████▉     | 2229/4530 [00:40<00:32, 71.39it/s] 49%|████▉     | 2237/4530 [00:40<00:32, 71.34it/s] 50%|████▉     | 2245/4530 [00:40<00:32, 71.06it/s] 50%|████▉     | 2253/4530 [00:40<00:32, 70.89it/s] 50%|████▉     | 2261/4530 [00:41<00:31, 71.92it/s]Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000001a0cc6142f00074b63'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs00000019090cf40a00074b64'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000001a8179381d00074b65'
+OSError: [Errno 16] Device or resource busy: '.nfs0000001983f3841f00074b66'
+                                                    50%|█████     | 2265/4530 [00:41<00:31, 71.92it/s]{'loss': 3.6145, 'grad_norm': 1.4114898443222046, 'learning_rate': 5.002207505518765e-05, 'epoch': 5.0}
+
+  0%|          | 0/24 [00:00<?, ?it/s][A
+ 71%|███████   | 17/24 [00:00<00:00, 168.99it/s][ATraceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+Traceback (most recent call last):
+Traceback (most recent call last):
+OSError: [Errno 16] Device or resource busy: '.nfs0000001f01dc103900074b67'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000001f8ba9686b00074b6a'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs00000020809777e200074b69'
+OSError: [Errno 16] Device or resource busy: '.nfs0000002003e4bc0b00074b68'
+                                                   
+                                                [A 50%|█████     | 2265/4530 [00:41<00:31, 71.92it/s]
+100%|██████████| 24/24 [00:00<00:00, 168.99it/s][A
+                                                [A{'eval_loss': 3.580470561981201, 'eval_runtime': 0.7054, 'eval_samples_per_second': 270.774, 'eval_steps_per_second': 34.024, 'epoch': 5.0}
+ 50%|█████     | 2269/4530 [00:42<02:13, 17.00it/s] 50%|█████     | 2277/4530 [00:42<01:42, 21.99it/s] 50%|█████     | 2285/4530 [00:42<01:20, 27.75it/s] 51%|█████     | 2293/4530 [00:42<01:05, 34.01it/s] 51%|█████     | 2301/4530 [00:42<00:55, 40.43it/s] 51%|█████     | 2309/4530 [00:42<00:47, 46.54it/s] 51%|█████     | 2317/4530 [00:43<00:42, 51.87it/s] 51%|█████▏    | 2325/4530 [00:43<00:39, 56.53it/s] 52%|█████▏    | 2333/4530 [00:43<00:36, 60.56it/s] 52%|█████▏    | 2341/4530 [00:43<00:34, 63.40it/s] 52%|█████▏    | 2349/4530 [00:43<00:33, 65.71it/s] 52%|█████▏    | 2357/4530 [00:43<00:32, 67.25it/s] 52%|█████▏    | 2365/4530 [00:43<00:31, 68.44it/s] 52%|█████▏    | 2373/4530 [00:43<00:31, 69.24it/s] 53%|█████▎    | 2381/4530 [00:43<00:30, 70.16it/s] 53%|█████▎    | 2389/4530 [00:44<00:30, 70.65it/s] 53%|█████▎    | 2397/4530 [00:44<00:30, 70.89it/s] 53%|█████▎    | 2405/4530 [00:44<00:29, 71.42it/s] 53%|█████▎    | 2413/4530 [00:44<00:29, 71.57it/s] 53%|█████▎    | 2421/4530 [00:44<00:29, 72.14it/s] 54%|█████▎    | 2429/4530 [00:44<00:29, 72.22it/s] 54%|█████▍    | 2437/4530 [00:44<00:29, 72.06it/s] 54%|█████▍    | 2445/4530 [00:44<00:29, 71.82it/s] 54%|█████▍    | 2453/4530 [00:44<00:28, 71.75it/s] 54%|█████▍    | 2461/4530 [00:45<00:28, 71.75it/s] 55%|█████▍    | 2469/4530 [00:45<00:28, 71.99it/s] 55%|█████▍    | 2477/4530 [00:45<00:28, 71.86it/s] 55%|█████▍    | 2485/4530 [00:45<00:28, 72.15it/s] 55%|█████▌    | 2493/4530 [00:45<00:28, 71.95it/s] 55%|█████▌    | 2501/4530 [00:45<00:28, 71.96it/s] 55%|█████▌    | 2509/4530 [00:45<00:28, 71.97it/s] 56%|█████▌    | 2517/4530 [00:45<00:27, 71.98it/s] 56%|█████▌    | 2525/4530 [00:45<00:27, 71.79it/s] 56%|█████▌    | 2533/4530 [00:46<00:27, 71.80it/s] 56%|█████▌    | 2541/4530 [00:46<00:27, 71.58it/s] 56%|█████▋    | 2549/4530 [00:46<00:27, 71.43it/s] 56%|█████▋    | 2557/4530 [00:46<00:27, 71.62it/s] 57%|█████▋    | 2565/4530 [00:46<00:27, 71.93it/s] 57%|█████▋    | 2573/4530 [00:46<00:27, 71.67it/s] 57%|█████▋    | 2581/4530 [00:46<00:27, 71.95it/s] 57%|█████▋    | 2589/4530 [00:46<00:27, 71.75it/s] 57%|█████▋    | 2597/4530 [00:46<00:26, 71.72it/s] 58%|█████▊    | 2605/4530 [00:47<00:26, 71.70it/s] 58%|█████▊    | 2613/4530 [00:47<00:26, 71.89it/s] 58%|█████▊    | 2621/4530 [00:47<00:26, 72.22it/s] 58%|█████▊    | 2629/4530 [00:47<00:26, 71.95it/s] 58%|█████▊    | 2637/4530 [00:47<00:26, 72.09it/s] 58%|█████▊    | 2645/4530 [00:47<00:26, 72.20it/s] 59%|█████▊    | 2653/4530 [00:47<00:25, 72.26it/s] 59%|█████▊    | 2661/4530 [00:47<00:25, 72.27it/s] 59%|█████▉    | 2669/4530 [00:47<00:25, 71.87it/s] 59%|█████▉    | 2677/4530 [00:48<00:25, 71.97it/s] 59%|█████▉    | 2685/4530 [00:48<00:25, 72.01it/s] 59%|█████▉    | 2693/4530 [00:48<00:25, 71.96it/s] 60%|█████▉    | 2701/4530 [00:48<00:25, 72.09it/s] 60%|█████▉    | 2709/4530 [00:48<00:25, 72.03it/s] 60%|█████▉    | 2717/4530 [00:48<00:24, 73.36it/s]Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs00000024030dc83700074b6d'
+OSError: [Errno 16] Device or resource busy: '.nfs0000002296c9842500074b6b'
+OSError: [Errno 16] Device or resource busy: '.nfs0000002201d18c2100074b6c'
+OSError: [Errno 16] Device or resource busy: '.nfs0000002382efec6100074b6e'
+                                                    60%|██████    | 2718/4530 [00:48<00:24, 73.36it/s]{'loss': 3.5265, 'grad_norm': 2.333512783050537, 'learning_rate': 4.002207505518764e-05, 'epoch': 6.0}
+
+  0%|          | 0/24 [00:00<?, ?it/s][A
+ 42%|████▏     | 10/24 [00:00<00:00, 99.67it/s][ATraceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs000000270a6aac3500074b6f'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs00000027979d002e00074b72'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000002887c2fc1d00074b70'
+OSError: [Errno 16] Device or resource busy: '.nfs00000028013f800900074b71'
+
+100%|██████████| 24/24 [00:00<00:00, 83.65it/s][A                                                   
+                                               [A 60%|██████    | 2718/4530 [00:49<00:24, 73.36it/s]
+100%|██████████| 24/24 [00:00<00:00, 83.65it/s][A
+                                               [A{'eval_loss': 3.528684377670288, 'eval_runtime': 0.5743, 'eval_samples_per_second': 332.562, 'eval_steps_per_second': 41.788, 'epoch': 6.0}
+ 60%|██████    | 2725/4530 [00:49<01:31, 19.76it/s] 60%|██████    | 2733/4530 [00:49<01:11, 25.21it/s] 61%|██████    | 2741/4530 [00:49<00:57, 31.36it/s] 61%|██████    | 2749/4530 [00:50<00:47, 37.66it/s] 61%|██████    | 2757/4530 [00:50<00:40, 43.98it/s] 61%|██████    | 2765/4530 [00:50<00:35, 49.76it/s] 61%|██████    | 2773/4530 [00:50<00:32, 54.58it/s] 61%|██████▏   | 2781/4530 [00:50<00:29, 58.80it/s] 62%|██████▏   | 2789/4530 [00:50<00:28, 61.97it/s] 62%|██████▏   | 2797/4530 [00:50<00:26, 64.30it/s] 62%|██████▏   | 2805/4530 [00:50<00:25, 66.45it/s] 62%|██████▏   | 2813/4530 [00:50<00:25, 68.05it/s] 62%|██████▏   | 2821/4530 [00:51<00:25, 68.18it/s] 62%|██████▏   | 2829/4530 [00:51<00:24, 69.06it/s] 63%|██████▎   | 2837/4530 [00:51<00:24, 69.70it/s] 63%|██████▎   | 2845/4530 [00:51<00:23, 70.28it/s] 63%|██████▎   | 2853/4530 [00:51<00:23, 70.77it/s] 63%|██████▎   | 2861/4530 [00:51<00:23, 71.01it/s] 63%|██████▎   | 2869/4530 [00:51<00:23, 71.11it/s] 64%|██████▎   | 2877/4530 [00:51<00:23, 71.74it/s] 64%|██████▎   | 2885/4530 [00:51<00:22, 71.60it/s] 64%|██████▍   | 2893/4530 [00:52<00:22, 71.24it/s] 64%|██████▍   | 2901/4530 [00:52<00:22, 70.98it/s] 64%|██████▍   | 2909/4530 [00:52<00:22, 70.90it/s] 64%|██████▍   | 2917/4530 [00:52<00:22, 70.79it/s] 65%|██████▍   | 2925/4530 [00:52<00:22, 70.93it/s] 65%|██████▍   | 2933/4530 [00:52<00:22, 71.06it/s] 65%|██████▍   | 2941/4530 [00:52<00:22, 71.16it/s] 65%|██████▌   | 2949/4530 [00:52<00:22, 70.34it/s] 65%|██████▌   | 2957/4530 [00:52<00:22, 71.03it/s] 65%|██████▌   | 2965/4530 [00:53<00:22, 70.97it/s] 66%|██████▌   | 2973/4530 [00:53<00:21, 70.98it/s] 66%|██████▌   | 2981/4530 [00:53<00:21, 71.32it/s] 66%|██████▌   | 2989/4530 [00:53<00:21, 71.43it/s] 66%|██████▌   | 2997/4530 [00:53<00:21, 71.82it/s] 66%|██████▋   | 3005/4530 [00:53<00:21, 71.65it/s] 67%|██████▋   | 3013/4530 [00:53<00:22, 68.13it/s] 67%|██████▋   | 3021/4530 [00:53<00:21, 68.93it/s] 67%|██████▋   | 3029/4530 [00:53<00:21, 69.53it/s] 67%|██████▋   | 3037/4530 [00:54<00:21, 69.91it/s] 67%|██████▋   | 3045/4530 [00:54<00:21, 70.44it/s] 67%|██████▋   | 3053/4530 [00:54<00:20, 70.49it/s] 68%|██████▊   | 3061/4530 [00:54<00:20, 70.73it/s] 68%|██████▊   | 3069/4530 [00:54<00:20, 70.85it/s] 68%|██████▊   | 3077/4530 [00:54<00:20, 71.08it/s] 68%|██████▊   | 3085/4530 [00:54<00:20, 71.70it/s] 68%|██████▊   | 3093/4530 [00:54<00:20, 71.44it/s] 68%|██████▊   | 3101/4530 [00:54<00:19, 71.51it/s] 69%|██████▊   | 3109/4530 [00:55<00:19, 71.53it/s] 69%|██████▉   | 3117/4530 [00:55<00:19, 71.43it/s] 69%|██████▉   | 3125/4530 [00:55<00:19, 71.47it/s] 69%|██████▉   | 3133/4530 [00:55<00:19, 71.64it/s] 69%|██████▉   | 3141/4530 [00:55<00:19, 72.46it/s] 70%|██████▉   | 3149/4530 [00:55<00:19, 72.54it/s] 70%|██████▉   | 3157/4530 [00:55<00:19, 72.03it/s] 70%|██████▉   | 3165/4530 [00:55<00:18, 72.23it/s]Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000002a8df0201a00074b73'
+OSError: [Errno 16] Device or resource busy: '.nfs00000029825aa83800074b74'
+OSError: [Errno 16] Device or resource busy: '.nfs0000002a0292142200074b75'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs000000290cac2c3900074b76'
+                                                    70%|███████   | 3171/4530 [00:56<00:18, 72.23it/s]{'loss': 3.4496, 'grad_norm': 2.0850861072540283, 'learning_rate': 3.002207505518764e-05, 'epoch': 7.0}
+
+  0%|          | 0/24 [00:00<?, ?it/s][A
+ 88%|████████▊ | 21/24 [00:00<00:00, 204.98it/s][ATraceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000002d99fdd81800074b77'
+OSError: [Errno 16] Device or resource busy: '.nfs0000002d02c8643900074b7a'
+OSError: [Errno 16] Device or resource busy: '.nfs0000002c05e8380900074b79'
+OSError: [Errno 16] Device or resource busy: '.nfs0000002c8414e02100074b78'
+                                                   
+                                                [A 70%|███████   | 3171/4530 [00:56<00:18, 72.23it/s]
+100%|██████████| 24/24 [00:00<00:00, 204.98it/s][A
+                                                [A{'eval_loss': 3.4928250312805176, 'eval_runtime': 0.6664, 'eval_samples_per_second': 286.594, 'eval_steps_per_second': 36.012, 'epoch': 7.0}
+ 70%|███████   | 3173/4530 [00:57<01:16, 17.73it/s] 70%|███████   | 3180/4530 [00:57<01:00, 22.26it/s] 70%|███████   | 3187/4530 [00:57<00:48, 27.49it/s] 71%|███████   | 3194/4530 [00:57<00:40, 33.24it/s] 71%|███████   | 3202/4530 [00:57<00:33, 39.95it/s] 71%|███████   | 3210/4530 [00:57<00:28, 46.35it/s] 71%|███████   | 3218/4530 [00:57<00:25, 51.92it/s] 71%|███████   | 3226/4530 [00:57<00:22, 56.74it/s] 71%|███████▏  | 3234/4530 [00:57<00:21, 60.39it/s] 72%|███████▏  | 3242/4530 [00:58<00:20, 63.22it/s] 72%|███████▏  | 3250/4530 [00:58<00:19, 65.31it/s] 72%|███████▏  | 3258/4530 [00:58<00:18, 67.03it/s] 72%|███████▏  | 3266/4530 [00:58<00:18, 68.34it/s] 72%|███████▏  | 3274/4530 [00:58<00:18, 68.94it/s] 72%|███████▏  | 3282/4530 [00:58<00:17, 69.43it/s] 73%|███████▎  | 3290/4530 [00:58<00:21, 58.01it/s] 73%|███████▎  | 3298/4530 [00:58<00:20, 61.50it/s] 73%|███████▎  | 3306/4530 [00:59<00:19, 64.01it/s] 73%|███████▎  | 3314/4530 [00:59<00:18, 66.18it/s] 73%|███████▎  | 3322/4530 [00:59<00:17, 67.70it/s] 74%|███████▎  | 3330/4530 [00:59<00:17, 68.55it/s] 74%|███████▎  | 3338/4530 [00:59<00:17, 69.48it/s] 74%|███████▍  | 3346/4530 [00:59<00:16, 70.09it/s] 74%|███████▍  | 3354/4530 [00:59<00:16, 70.34it/s] 74%|███████▍  | 3362/4530 [00:59<00:16, 70.59it/s] 74%|███████▍  | 3370/4530 [00:59<00:16, 70.61it/s] 75%|███████▍  | 3378/4530 [01:00<00:16, 70.85it/s] 75%|███████▍  | 3386/4530 [01:00<00:16, 71.09it/s] 75%|███████▍  | 3394/4530 [01:00<00:15, 71.25it/s] 75%|███████▌  | 3402/4530 [01:00<00:15, 71.27it/s] 75%|███████▌  | 3410/4530 [01:00<00:15, 71.14it/s] 75%|███████▌  | 3418/4530 [01:00<00:15, 70.95it/s] 76%|███████▌  | 3426/4530 [01:00<00:15, 71.41it/s] 76%|███████▌  | 3434/4530 [01:00<00:15, 71.34it/s] 76%|███████▌  | 3442/4530 [01:00<00:15, 71.09it/s] 76%|███████▌  | 3450/4530 [01:01<00:15, 71.30it/s] 76%|███████▋  | 3458/4530 [01:01<00:15, 70.56it/s] 77%|███████▋  | 3466/4530 [01:01<00:15, 70.01it/s] 77%|███████▋  | 3474/4530 [01:01<00:15, 69.57it/s] 77%|███████▋  | 3481/4530 [01:01<00:15, 69.54it/s] 77%|███████▋  | 3488/4530 [01:01<00:14, 69.49it/s] 77%|███████▋  | 3496/4530 [01:01<00:14, 69.69it/s] 77%|███████▋  | 3504/4530 [01:01<00:14, 70.06it/s] 78%|███████▊  | 3512/4530 [01:01<00:14, 69.95it/s] 78%|███████▊  | 3519/4530 [01:02<00:14, 69.78it/s] 78%|███████▊  | 3527/4530 [01:02<00:14, 69.92it/s] 78%|███████▊  | 3535/4530 [01:02<00:14, 70.58it/s] 78%|███████▊  | 3543/4530 [01:02<00:13, 70.76it/s] 78%|███████▊  | 3551/4530 [01:02<00:13, 70.95it/s] 79%|███████▊  | 3559/4530 [01:02<00:13, 71.70it/s] 79%|███████▊  | 3567/4530 [01:02<00:13, 72.00it/s] 79%|███████▉  | 3575/4530 [01:02<00:13, 72.53it/s] 79%|███████▉  | 3583/4530 [01:02<00:13, 72.27it/s] 79%|███████▉  | 3591/4530 [01:03<00:12, 72.61it/s] 79%|███████▉  | 3599/4530 [01:03<00:12, 72.08it/s] 80%|███████▉  | 3607/4530 [01:03<00:12, 71.28it/s] 80%|███████▉  | 3615/4530 [01:03<00:12, 70.82it/s] 80%|███████▉  | 3623/4530 [01:03<00:12, 72.28it/s]Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000002f83d7b00b00074b7c'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000002e038e085300074b7e'
+OSError: [Errno 16] Device or resource busy: '.nfs0000002f09e52c0f00074b7b'
+OSError: [Errno 16] Device or resource busy: '.nfs0000002e84296c1d00074b7d'
+                                                    80%|████████  | 3624/4530 [01:03<00:12, 72.28it/s]{'loss': 3.3954, 'grad_norm': 1.6570185422897339, 'learning_rate': 2.002207505518764e-05, 'epoch': 8.0}
+
+  0%|          | 0/24 [00:00<?, ?it/s][A
+ 54%|█████▍    | 13/24 [00:00<00:00, 127.03it/s][ATraceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+Traceback (most recent call last):
+OSError: [Errno 16] Device or resource busy: '.nfs0000003306ea201000074b7f'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs000000320907585f00074b80'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs000000328a76e42e00074b81'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs000000340579e43900074b82'
+                                                   
+                                                [A 80%|████████  | 3624/4530 [01:04<00:12, 72.28it/s]
+100%|██████████| 24/24 [00:00<00:00, 127.03it/s][A
+                                                [A{'eval_loss': 3.465912342071533, 'eval_runtime': 0.5881, 'eval_samples_per_second': 324.758, 'eval_steps_per_second': 40.807, 'epoch': 8.0}
+ 80%|████████  | 3631/4530 [01:04<00:48, 18.35it/s] 80%|████████  | 3638/4530 [01:04<00:38, 22.95it/s] 80%|████████  | 3646/4530 [01:04<00:30, 28.96it/s] 81%|████████  | 3653/4530 [01:05<00:25, 34.56it/s] 81%|████████  | 3661/4530 [01:05<00:21, 41.26it/s] 81%|████████  | 3669/4530 [01:05<00:18, 47.33it/s] 81%|████████  | 3677/4530 [01:05<00:16, 52.63it/s] 81%|████████▏ | 3685/4530 [01:05<00:14, 57.32it/s] 82%|████████▏ | 3693/4530 [01:05<00:13, 61.02it/s] 82%|████████▏ | 3701/4530 [01:05<00:13, 63.57it/s] 82%|████████▏ | 3709/4530 [01:05<00:12, 65.63it/s] 82%|████████▏ | 3717/4530 [01:05<00:12, 66.98it/s] 82%|████████▏ | 3725/4530 [01:06<00:11, 68.36it/s] 82%|████████▏ | 3733/4530 [01:06<00:11, 69.01it/s] 83%|████████▎ | 3741/4530 [01:06<00:11, 69.68it/s] 83%|████████▎ | 3749/4530 [01:06<00:11, 70.04it/s] 83%|████████▎ | 3757/4530 [01:06<00:10, 70.69it/s] 83%|████████▎ | 3765/4530 [01:06<00:10, 70.62it/s] 83%|████████▎ | 3773/4530 [01:06<00:10, 70.73it/s] 83%|████████▎ | 3781/4530 [01:06<00:10, 70.65it/s] 84%|████████▎ | 3789/4530 [01:06<00:10, 70.55it/s] 84%|████████▍ | 3797/4530 [01:07<00:10, 70.33it/s] 84%|████████▍ | 3805/4530 [01:07<00:10, 70.09it/s] 84%|████████▍ | 3813/4530 [01:07<00:10, 69.79it/s] 84%|████████▍ | 3820/4530 [01:07<00:10, 68.61it/s] 84%|████████▍ | 3827/4530 [01:07<00:10, 68.39it/s] 85%|████████▍ | 3834/4530 [01:07<00:10, 68.41it/s] 85%|████████▍ | 3841/4530 [01:07<00:10, 68.47it/s] 85%|████████▍ | 3848/4530 [01:07<00:09, 68.81it/s] 85%|████████▌ | 3856/4530 [01:07<00:09, 69.41it/s] 85%|████████▌ | 3864/4530 [01:08<00:09, 69.82it/s] 85%|████████▌ | 3872/4530 [01:08<00:09, 70.11it/s] 86%|████████▌ | 3880/4530 [01:08<00:09, 70.26it/s] 86%|████████▌ | 3888/4530 [01:08<00:09, 70.71it/s] 86%|████████▌ | 3896/4530 [01:08<00:08, 70.89it/s] 86%|████████▌ | 3904/4530 [01:08<00:08, 71.23it/s] 86%|████████▋ | 3912/4530 [01:08<00:08, 71.21it/s] 87%|████████▋ | 3920/4530 [01:08<00:08, 71.06it/s] 87%|████████▋ | 3928/4530 [01:08<00:08, 70.73it/s] 87%|████████▋ | 3936/4530 [01:09<00:08, 69.43it/s] 87%|████████▋ | 3943/4530 [01:09<00:08, 69.47it/s] 87%|████████▋ | 3950/4530 [01:09<00:08, 69.14it/s] 87%|████████▋ | 3957/4530 [01:09<00:08, 69.02it/s] 88%|████████▊ | 3964/4530 [01:09<00:08, 68.90it/s] 88%|████████▊ | 3971/4530 [01:09<00:08, 69.10it/s] 88%|████████▊ | 3978/4530 [01:09<00:07, 69.10it/s] 88%|████████▊ | 3986/4530 [01:09<00:07, 69.50it/s] 88%|████████▊ | 3993/4530 [01:09<00:07, 69.23it/s] 88%|████████▊ | 4001/4530 [01:09<00:07, 69.64it/s] 88%|████████▊ | 4009/4530 [01:10<00:07, 70.14it/s] 89%|████████▊ | 4017/4530 [01:10<00:07, 70.59it/s] 89%|████████▉ | 4025/4530 [01:10<00:07, 70.64it/s] 89%|████████▉ | 4033/4530 [01:10<00:07, 70.44it/s] 89%|████████▉ | 4041/4530 [01:10<00:06, 70.57it/s] 89%|████████▉ | 4049/4530 [01:10<00:06, 70.41it/s] 90%|████████▉ | 4057/4530 [01:10<00:06, 70.41it/s] 90%|████████▉ | 4065/4530 [01:10<00:06, 70.46it/s] 90%|████████▉ | 4073/4530 [01:11<00:06, 71.53it/s]Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs00000035065e2c0500074b84'
+OSError: [Errno 16] Device or resource busy: '.nfs00000035822c9c0d00074b85'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000003704acf81b00074b86'
+OSError: [Errno 16] Device or resource busy: '.nfs000000368670d02000074b83'
+                                                    90%|█████████ | 4077/4530 [01:11<00:06, 71.53it/s]{'loss': 3.3507, 'grad_norm': 1.3446757793426514, 'learning_rate': 1.0022075055187637e-05, 'epoch': 9.0}
+
+  0%|          | 0/24 [00:00<?, ?it/s][A
+ 88%|████████▊ | 21/24 [00:00<00:00, 208.44it/s][ATraceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000003b8e801c1800074b87'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000003c09417c2c00074b89'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000003d09ef341100074b88'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000003c881c681b00074b8a'
+                                                   
+                                                [A 90%|█████████ | 4077/4530 [01:11<00:06, 71.53it/s]
+100%|██████████| 24/24 [00:00<00:00, 208.44it/s][A
+                                                [A{'eval_loss': 3.4497463703155518, 'eval_runtime': 0.5966, 'eval_samples_per_second': 320.135, 'eval_steps_per_second': 40.226, 'epoch': 9.0}
+ 90%|█████████ | 4081/4530 [01:12<00:24, 18.17it/s] 90%|█████████ | 4089/4530 [01:12<00:18, 23.41it/s] 90%|█████████ | 4097/4530 [01:12<00:14, 29.31it/s] 91%|█████████ | 4105/4530 [01:12<00:11, 35.69it/s] 91%|█████████ | 4113/4530 [01:12<00:09, 42.12it/s] 91%|█████████ | 4121/4530 [01:12<00:08, 48.00it/s] 91%|█████████ | 4129/4530 [01:12<00:07, 53.19it/s] 91%|█████████▏| 4137/4530 [01:12<00:06, 57.73it/s] 92%|█████████▏| 4145/4530 [01:13<00:06, 61.18it/s] 92%|█████████▏| 4153/4530 [01:13<00:05, 64.44it/s] 92%|█████████▏| 4161/4530 [01:13<00:05, 66.36it/s] 92%|█████████▏| 4169/4530 [01:13<00:05, 68.18it/s] 92%|█████████▏| 4177/4530 [01:13<00:05, 69.27it/s] 92%|█████████▏| 4185/4530 [01:13<00:04, 70.33it/s] 93%|█████████▎| 4193/4530 [01:13<00:04, 70.81it/s] 93%|█████████▎| 4201/4530 [01:13<00:04, 70.85it/s] 93%|█████████▎| 4209/4530 [01:13<00:04, 71.07it/s] 93%|█████████▎| 4217/4530 [01:14<00:04, 71.10it/s] 93%|█████████▎| 4225/4530 [01:14<00:04, 71.76it/s] 93%|█████████▎| 4233/4530 [01:14<00:04, 71.78it/s] 94%|█████████▎| 4241/4530 [01:14<00:04, 71.58it/s] 94%|█████████▍| 4249/4530 [01:14<00:03, 71.88it/s] 94%|█████████▍| 4257/4530 [01:14<00:03, 71.87it/s] 94%|█████████▍| 4265/4530 [01:14<00:03, 71.89it/s] 94%|█████████▍| 4273/4530 [01:14<00:03, 71.80it/s] 95%|█████████▍| 4281/4530 [01:14<00:03, 71.73it/s] 95%|█████████▍| 4289/4530 [01:15<00:03, 71.70it/s] 95%|█████████▍| 4297/4530 [01:15<00:03, 72.01it/s] 95%|█████████▌| 4305/4530 [01:15<00:03, 72.06it/s] 95%|█████████▌| 4313/4530 [01:15<00:02, 72.52it/s] 95%|█████████▌| 4321/4530 [01:15<00:02, 72.57it/s] 96%|█████████▌| 4329/4530 [01:15<00:02, 72.08it/s] 96%|█████████▌| 4337/4530 [01:15<00:02, 72.24it/s] 96%|█████████▌| 4345/4530 [01:15<00:02, 72.05it/s] 96%|█████████▌| 4353/4530 [01:15<00:02, 72.21it/s] 96%|█████████▋| 4361/4530 [01:16<00:02, 72.30it/s] 96%|█████████▋| 4369/4530 [01:16<00:02, 72.27it/s] 97%|█████████▋| 4377/4530 [01:16<00:02, 71.88it/s] 97%|█████████▋| 4385/4530 [01:16<00:02, 71.94it/s] 97%|█████████▋| 4393/4530 [01:16<00:01, 72.13it/s] 97%|█████████▋| 4401/4530 [01:16<00:01, 72.38it/s] 97%|█████████▋| 4409/4530 [01:16<00:01, 72.17it/s] 98%|█████████▊| 4417/4530 [01:16<00:01, 72.14it/s] 98%|█████████▊| 4425/4530 [01:16<00:01, 71.79it/s] 98%|█████████▊| 4433/4530 [01:17<00:01, 71.58it/s] 98%|█████████▊| 4441/4530 [01:17<00:01, 71.75it/s] 98%|█████████▊| 4449/4530 [01:17<00:01, 71.77it/s] 98%|█████████▊| 4457/4530 [01:17<00:01, 71.80it/s] 99%|█████████▊| 4465/4530 [01:17<00:00, 71.62it/s] 99%|█████████▊| 4473/4530 [01:17<00:00, 71.53it/s] 99%|█████████▉| 4481/4530 [01:17<00:00, 71.23it/s] 99%|█████████▉| 4489/4530 [01:17<00:00, 71.19it/s] 99%|█████████▉| 4497/4530 [01:17<00:00, 71.55it/s] 99%|█████████▉| 4505/4530 [01:18<00:00, 71.88it/s]100%|█████████▉| 4513/4530 [01:18<00:00, 71.76it/s]100%|█████████▉| 4521/4530 [01:18<00:00, 71.87it/s]100%|█████████▉| 4529/4530 [01:18<00:00, 73.52it/s]Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+Traceback (most recent call last):
+Traceback (most recent call last):
+OSError: [Errno 16] Device or resource busy: '.nfs0000003e8beafc0900074b8c'
+OSError: [Errno 16] Device or resource busy: '.nfs0000003f909d983700074b8d'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000004003b26c0d00074b8e'
+OSError: [Errno 16] Device or resource busy: '.nfs0000003f05c0900200074b8b'
+                                                   100%|██████████| 4530/4530 [01:18<00:00, 73.52it/s]{'loss': 3.3134, 'grad_norm': 1.6966047286987305, 'learning_rate': 2.207505518763797e-08, 'epoch': 10.0}
+
+  0%|          | 0/24 [00:00<?, ?it/s][A
+ 50%|█████     | 12/24 [00:00<00:00, 118.80it/s][ATraceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs000000460647643500074b92'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs000000470604dc0500074b90'
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 303, in _run_finalizers
+    finalizer()
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/multiprocessing/util.py", line 136, in _remove_temp_dir
+    rmtree(tempdir, onerror=onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 703, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+  File "/home/pier/.conda/envs/babylm-train/lib/python3.11/shutil.py", line 701, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+OSError: [Errno 16] Device or resource busy: '.nfs0000004685b7843d00074b8f'
+OSError: [Errno 16] Device or resource busy: '.nfs000000458b51701b00074b91'
+
+100%|██████████| 24/24 [00:00<00:00, 47.51it/s] [A                                                   
+                                               [A100%|██████████| 4530/4530 [01:19<00:00, 73.52it/s]
+100%|██████████| 24/24 [00:00<00:00, 47.51it/s][A
+                                               [A                                                   100%|██████████| 4530/4530 [01:19<00:00, 73.52it/s]100%|██████████| 4530/4530 [01:19<00:00, 57.05it/s]
+{'eval_loss': 3.444647789001465, 'eval_runtime': 0.8634, 'eval_samples_per_second': 221.221, 'eval_steps_per_second': 27.797, 'epoch': 10.0}
+{'train_runtime': 79.4054, 'train_samples_per_second': 456.392, 'train_steps_per_second': 57.049, 'train_loss': 3.684663010485651, 'epoch': 10.0}
