@@ -79,17 +79,14 @@ def main():
     parser.add_argument("--learning_rate", type=float, default=1e-04, help="Learning rate")
     parser.add_argument("--push_to_hub", action="store_true", help="Push model to Hugging Face Hub")
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
-    parser.add_argument("--revision", type=str, default=None, help="Dataset revision: one hash, or one per dataset separated by spaces")
-
+    parser.add_argument("--revision", type=str, default=None, help="Dataset revision (commit hash); default: newest version")
     args = parser.parse_args()
 
     print("📥 Loading dataset...")
     if " " in args.dataset:
         datasets = []
-        names = args.dataset.split()
-        revisions = args.revision.split() if args.revision else [None] * len(names)
-        for dataset_name, revision in zip(names, revisions):
-            dataset = load_dataset(dataset_name, split="train", revision=revision).select_columns(["text"])
+        for dataset_name in args.dataset.split():
+            dataset = load_dataset(dataset_name, split="train")
             datasets.append(dataset)
         dataset = concatenate_datasets(datasets)
     else:
